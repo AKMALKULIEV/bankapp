@@ -100,6 +100,6 @@ func ExampleTotal() {
 	}
 	fmt.Println(Total(cards))
 	//Output:
-	// 200000
+	// 100000
 
 }

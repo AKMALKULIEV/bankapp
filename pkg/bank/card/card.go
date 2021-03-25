@@ -76,12 +76,16 @@ const depositLimit = 50_000_00
  }
 func Total(cards []types.Card)  types.Money{
 	
-	sum := types.Card{}
-	for _, operation := range cards {
-		if sum.Balance >= 0 {
-		sum.Balance +=types.Money(operation.Balance)
+	sum := types.Money(0)
+	for _, card := range cards {
+		if card.Balance <= 0 {
+		continue
 		}
+		if !card.Active {
+			continue
+			}
+		sum += card.Balance	
 	}
 	
-	return sum.Balance
+	return sum
 }
