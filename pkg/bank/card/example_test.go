@@ -84,22 +84,39 @@ import (
 // }
 
 func ExampleTotal() {
-	cards := []types.Card{
+	fmt.Println(Total([]types.Card{
+	   {
+		Balance: 100000,
+		Active:  true,
+	    },      
+	}))
+	fmt.Println(Total([]types.Card{
 		{
-			Balance: 100000,
-			Active:  true,
-		},
+		Balance: 100000,
+		Active:  true,
+	    },
 		{
-			Balance: 00000,
-			Active:  true,
-		},
+		Balance: 200000,
+		Active:  true,
+	    },       
+	}))
+	fmt.Println(Total([]types.Card{
 		{
-			Balance: 100000,
-			Active:  false,
-		},
-	}
-	fmt.Println(Total(cards))
+		 Balance: 100000,
+		 Active:  false,
+		 },      
+	 }))
+	 fmt.Println(Total([]types.Card{
+		{
+		 Balance: -100000,
+		 Active:  true,
+		 },      
+	 }))
+
 	//Output:
 	// 100000
+	// 300000
+	// 0
+	// 0
 
 }
