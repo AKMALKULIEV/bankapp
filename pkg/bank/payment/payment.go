@@ -1,6 +1,8 @@
 package payment
+
 import (
 	"bank/pkg/bank/types"
+	
 	// "fmt"
 )
 

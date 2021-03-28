@@ -1,7 +1,7 @@
 package types
 
-type Money int64 // Money in cents
-type Currency string // Represents code of currency
+type Money int64 
+type Currency string 
 const (
 	TJS Currency = "TJS"
 	RUB Currency = "RUB"
@@ -11,7 +11,7 @@ type PAN string
 
 type Card struct {
 	Id        int 
-	Pan       PAN
+	PAN       PAN
 	Balance   Money
 	Currency  Currency
 	Color     string
@@ -23,4 +23,10 @@ type Card struct {
 type Payment struct{
 	ID     int
 	Amount Money
+}
+
+type PaymentSource struct{
+	Type    string 
+	Number  string
+	Balance Money	
 }
